@@ -1,6 +1,6 @@
-/* Programme : les horaires en retrait, pour mettre les noms des artistes en avant. */
+/* Programme : les horaires restent lisibles tout en mettant les noms des artistes en avant. */
 .programme .horaire {
-  color: #2B3648;
+  color: var(--wp--preset--color--contrast);
   font-weight: 600;
 }
 
