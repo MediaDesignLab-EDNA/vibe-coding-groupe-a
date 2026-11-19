@@ -12,3 +12,10 @@ Text Domain: festival-child
   outline: 3px solid var(--wp--preset--color--accent);
   outline-offset: 3px;
 }
+
+@media (max-width: 600px) {
+  h1.wp-block-heading {
+    font-size: clamp(2.25rem, 9vw, 3.5rem);
+    line-height: 1.1;
+  }
+}
