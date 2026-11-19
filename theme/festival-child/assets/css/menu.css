@@ -1,4 +1,4 @@
-/* Menu principal : toujours affiché en entier, sur une seule ligne, sans bouton « menu ». */
+/* Menu principal : toujours affiché en entier, sur une seule ligne, sans bouton « menu » sur grand écran. */
 .wp-block-navigation__responsive-container-open,
 .wp-block-navigation__responsive-container-close {
   display: none !important;
@@ -24,4 +24,36 @@
 .wp-block-navigation .wp-block-navigation__container,
 .wp-block-navigation .wp-block-page-list {
   gap: 2em;
+}
+
+/* Sur mobile, utiliser le menu responsive natif pour éviter le débordement horizontal. */
+@media (max-width: 781px) {
+  .wp-block-navigation__responsive-container-open {
+    display: flex !important;
+  }
+
+  .wp-block-navigation__responsive-container-close {
+    display: flex !important;
+  }
+
+  .wp-block-navigation__responsive-container:not(.is-menu-open) {
+    display: none !important;
+  }
+
+  .wp-block-navigation,
+  .wp-block-navigation__responsive-container,
+  .wp-block-navigation__responsive-container-content,
+  .wp-block-navigation .wp-block-navigation__container,
+  .wp-block-navigation .wp-block-page-list {
+    min-width: 0;
+    max-width: 100%;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .wp-block-navigation .wp-block-navigation__container,
+  .wp-block-navigation .wp-block-page-list {
+    gap: 1em;
+  }
 }
